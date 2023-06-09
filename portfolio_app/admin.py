@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .api.models.project import Project
+from .api.models.skill import Skill
+
+admin.site.register(Project)
+admin.site.register(Skill)
