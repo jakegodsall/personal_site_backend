@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 
 from .models.project import Project
-from .models.skill import Skill
-from .serializers import ProjectSerializer, SkillSerializer
+from .models.language import Language
+from .models.framework import Framework
+from .serializers import ProjectSerializer, LanguageSerializer, FrameworkSerializer
 
 # Create your views here.
 
@@ -12,6 +13,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
 
 
-class SkillViewSet(viewsets.ModelViewSet):
-    queryset = Skill.objects.all()
-    serializer_class = SkillSerializer
+class LanguageViewSet(viewsets.ModelViewSet):
+    queryset = Language.objects.all()
+    serializer_class = LanguageSerializer
+
+
+class FrameworkViewSet(viewsets.ModelViewSet):
+    queryset = Framework.objects.all()
+    serializer_class = FrameworkSerializer

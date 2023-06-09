@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
 from .models.project import Project
-from .models.skill import Skill
+from .models.language import Language
+from .models.framework import Framework
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -10,7 +11,13 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SkillSerializer(serializers.ModelSerializer):
+class LanguageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Skill
+        model = Language
+        fields = '__all__'
+
+
+class FrameworkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Framework
         fields = '__all__'
