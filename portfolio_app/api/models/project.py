@@ -1,6 +1,7 @@
 from django.db import models
 
-from .skill import Skill
+from .language import Language
+from .framework import Framework
 
 
 class Project(models.Model):
@@ -10,7 +11,8 @@ class Project(models.Model):
     # screenshot = models.ImageField(blank=True)
     start_date = models.DateField()
     end_date = models.DateField()
-    skills = models.ManyToManyField(Skill, related_name="skill")
+    languages = models.ManyToManyField(Language, related_name="language")
+    frameworks = models.ManyToManyField(Framework, related_name="framework")
 
     def __str__(self):
         return self.name
